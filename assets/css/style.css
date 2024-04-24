@@ -1,0 +1,2042 @@
+body {
+  margin: 0;
+  background-color: rgb(255, 254, 254);
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.scroll-top-button {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position */
+  bottom: 30px; /* Place the button 20px from the bottom */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it sits on top of other content */
+  border: none; /* No border */
+  outline: none; /* Remove outline */
+  background-color: #bbc6efd4; /* Button background color */
+  color: white; /* Arrow color */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 16px; /* Button size */
+  border-radius: 50%; /* Circular button */
+}
+
+.scroll-top-button:hover {
+  background-color: #6582ede4; /* Slightly darker shade on hover */
+  transition: 0.5s;
+}
+/* Base styles for the hamburger menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+}
+
+nav {
+  font-family: "Trebuchet MS";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  position: fixed; /* Set the position to fixed */
+  top: 0; /* Position it at the top of the viewport */
+  width: 100%; /* Make it take the full width of the viewport */
+  background-color: white; /* Optionally, set the background color */
+  z-index: 1000; /* Set a high z-index to ensure it's above other content */
+}
+
+nav img {
+  padding: 5px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style-type: none;
+}
+nav ul li {
+  margin-right: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(46, 45, 45);
+  font-size: 14px;
+}
+a:hover {
+  color: rgb(255, 183, 0);
+  transition: color 0.5s ease;
+}
+
+#mySidenav {
+  display: flex;
+  height: 100%; /* Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  background-color: white; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  padding-top: 70px; /* Place content 60px from the top */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  font-family: "Trebuchet MS";
+}
+
+#mySidenav ul {
+  width: 100%;
+  list-style-type: none; /* Remove list bullets */
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start; /* Align items to the start (left) of the container */
+  padding: 0;
+  margin: 0;
+}
+#mySidenav li {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+/* The navigation menu links within #mySidenav */
+#mySidenav a {
+  display: flex;
+  justify-content: left;
+  padding: 6px;
+  padding-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #081a4c;
+  display: block; /* Ensure links are full-width */
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links within #mySidenav, change their color */
+#mySidenav a:hover {
+  color: #ff9f21;
+}
+#mySidenav li {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Specific styles for dropdown content within #mySidenav to ensure they do not interfere with other elements */
+#mySidenav .dropdown-content,
+#mySidenav .dropdown-content-services {
+  display: none; /* Initially hidden */
+  position: absolute; /* Override default positioning */
+  left: 100%;
+  top: 0;
+  z-index: 2;
+  box-shadow: none; /* Remove any box shadow */
+  background-color: transparent; /* Match the sidenav background or make it transparent */
+}
+
+/* Display dropdown content when their parent elements are hovered within #mySidenav */
+#mySidenav .dropdown:hover .dropdown-content,
+#mySidenav .dropdown-services:hover .dropdown-content-services {
+  display: block;
+}
+
+#mySidenav .dropdown-content a,
+#mySidenav .dropdown-content-services a {
+  display: block;
+  padding-left: 30px; /* Indent dropdown links for a nested look */
+  font-size: 14px; /* Adjust font size if necessary */
+}
+
+/* Dropdown Content (Hidden by default) */
+.dropdown-content {
+  padding-top: 10px;
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border: none;
+}
+#mySidenav .dropdown,
+#mySidenav .dropdown-services {
+  position: relative; /* This makes the positioning of dropdowns relative to these elements */
+}
+.propertiesTitle {
+  font-size: 16px;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+#propertySidenav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 0; /* Initially set to 0 to hide */
+  position: fixed;
+  z-index: 2; /* Higher than mySidenav to appear on top */
+  background-color: white; /* Same as mySidenav */
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  font-family: "Trebuchet MS";
+}
+.propertiesTitle {
+  margin-top: 17px;
+}
+#propertySidenav ul {
+  padding-top: 0;
+  padding-left: 0;
+  margin-top: 0;
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  font-size: 12px;
+}
+#propertySidenav li {
+  display: flex;
+  padding: 5px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.363);
+}
+#propertySidenav a {
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+}
+#propertySidenav i {
+  padding-top: 20px;
+  color: #000000;
+}
+
+#servicesSidenav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 0; /* Initially set to 0 to hide */
+  position: fixed;
+  z-index: 2; /* Higher than mySidenav to appear on top */
+  background-color: white; /* Same as mySidenav */
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  font-family: "Trebuchet MS";
+}
+
+#servicesSidenav ul {
+  padding-top: 0;
+  padding-left: 0;
+  margin-top: 0;
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  font-size: 12px;
+}
+#servicesSidenav li {
+  display: flex;
+  padding: 5px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.224);
+}
+#servicesSidenav a {
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+}
+#servicesSidenav i {
+  padding-top: 20px;
+  color: #000000;
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  color: orange;
+  padding-left: 20px; /* adjust the distance as needed */
+  transition: 0.5s;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style the dropdown button to fit into the nav */
+.dropdown-services {
+  position: relative;
+  display: inline-block;
+}
+/* Dropdown Content (Hidden by default) */
+.dropdown-content-services {
+  padding-top: 10px;
+  padding-right: 10px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content-services a {
+  font-size: 10px;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content-services a:hover {
+  color: orange;
+  padding-left: 20px; /* adjust the distance as needed */
+  transition: 0.5s;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown-services:hover .dropdown-content-services {
+  display: block;
+}
+
+/* Style the dropdown button to fit into the nav */
+.dropdown-services {
+  position: relative;
+  display: inline-block;
+}
+img {
+  height: 40px;
+}
+header {
+  position: relative;
+}
+header img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.header-wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin: auto;
+  padding: 260px 16px;
+  position: relative;
+}
+.header-title {
+  font-family: "Trebuchet MS";
+  padding: 0px 10%;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgb(63, 61, 61);
+  font-weight: 1000;
+  font-size: 36px;
+}
+.header-sub {
+  font-family: "Trebuchet MS";
+  color: white;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 100;
+}
+.header-finder {
+  display: flex;
+  padding: 16px 0;
+  justify-content: center;
+}
+.header-finder-wrapper {
+  display: flex;
+}
+.header-finder-location select {
+  padding: 0 10px;
+  width: 350px;
+  height: 48px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  position: relative;
+  border: none;
+  color: rgb(117, 113, 113);
+  border-right: 1px solid rgba(195, 195, 195, 0.727);
+}
+.header-finder-location i {
+  position: absolute;
+  transform: translateY(100%) translateX(-250%);
+}
+
+/* *** */
+#checks-date {
+  position: relative;
+  width: 290px;
+  height: 46px;
+  border: none;
+  border-right: 1px solid rgba(195, 195, 195, 0.727);
+}
+
+.header-finder-date i {
+  position: absolute;
+  transform: translateY(100%) translateX(-200%);
+}
+.header-finder-guests {
+  width: 250px;
+  height: 48px;
+}
+.header-finder-guests button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: rgb(117, 113, 113);
+}
+.header-finder-btn {
+  width: 170px;
+  height: 50px;
+  color: white;
+  background-color: rgb(40, 88, 194);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.header-finder-guest {
+  width: 1000px;
+}
+
+.header-finder-guest-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align items to the start and end of the container */
+  margin-bottom: 10px; /* Add margin to separate each input group */
+}
+
+.header-finder-guest-counter button {
+  padding: 5px 10px;
+  height: 15px;
+  border: none;
+  background-color: white;
+}
+
+.header-finder-guest-counter input {
+  width: 40px;
+  text-align: center;
+  padding: 5px;
+  background-color: #bbc6ef;
+}
+.header-finder-guest-counter label {
+  margin-right: 10px; /* Add margin to the right of the label */
+  padding: 5px; /* Add padding to the labels */
+  color: white;
+  font-family: "Trebuchet MS"; /* Change font family */
+}
+
+.header-finder-guests-choice {
+  background-color: rgba(40, 89, 194, 0.78);
+  padding: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#why-choose {
+  text-align: center;
+}
+
+.why-choose-content {
+  width: 100%;
+  font-family: "Trebuchet MS";
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.why-choose-content h2 {
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.why-choose-content p {
+  margin: auto;
+  width: 60%;
+  margin-top: -20px;
+  font-size: 18px;
+  font-weight: 100;
+  color: rgb(147, 143, 143);
+  padding-bottom: 10px;
+}
+
+.why-choose-text {
+  font-family: "Trebuchet MS";
+  padding-top: 5px;
+  text-align: justify;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.why-choose-text p {
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 0 15%;
+  justify-content: center;
+  color: rgb(92, 90, 90);
+}
+.why-choose-text-card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.why-choose-text-card {
+  font-family: "Trebuchet MS";
+  border: 1px solid #ccc;
+  padding: 35px;
+  max-width: 300px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.why-choose-text-card-title {
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 19px;
+}
+
+.why-choose-text-card i {
+  font-size: 50px; /* Adjust the font size to your preference */
+  margin-bottom: 10px;
+}
+section img {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 450px;
+  object-fit: cover; /* Crop the image to cover the entire container */
+}
+.why-choose-properties-card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 100%; /* Adjust width as needed */
+  max-width: 1100px;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: justify;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.why-choose-properties-card img {
+  object-fit: cover; /* Ensure the image covers the entire content box */
+  border-bottom: 1px solid #ccc; /* Add a border to the bottom of the image */
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+}
+
+.why-choose-properties-card-details {
+  padding: 20px;
+}
+/* Ensure the details box is hidden by default and positioned correctly */
+.details-box-link {
+  font-family: "Trebuchet MS";
+
+  display: none; /* Hide link by default */
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -400%
+  ); /* Adjust position to truly center based on the link's dimensions */
+  padding: 10px 20px;
+  background-color: rgba(130, 156, 251, 0.7); /* Semi-transparent background */
+  color: rgb(233, 232, 232);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: opacity 0.3s ease; /* Smooth transition for better UX */
+}
+
+/* Show the details box when the card is hovered */
+.why-choose-properties-card:hover .details-box-link {
+  display: block;
+}
+.why-choose-properties-card:hover img {
+  transform: scale(0.95); /* Scale down to original size or a bit smaller */
+}
+
+.why-choose-properties-card-title {
+  padding-left: 20px;
+  padding-top: 30px;
+  font-weight: 100;
+  font-size: 18px;
+  color: #829cfb;
+  font-family: "Trebuchet MS";
+}
+
+.why-choose-properties-card-sub {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: rgb(206, 200, 200);
+  font-family: "Trebuchet MS";
+  font-size: 12px;
+}
+
+.why-choose-properties-card-location {
+  padding-left: 20px;
+  margin-bottom: 60px;
+  font-family: "Trebuchet MS";
+  color: rgb(104, 102, 102);
+}
+
+.why-choose-properties-card-price {
+  font-family: "Trebuchet MS";
+  padding-left: 20px;
+  padding-bottom: 40px;
+  font-weight: bold;
+  color: #5e7ae2;
+  border-bottom: 1px solid #ccc; /* Add a solid border beneath the price section */
+  margin-bottom: 20px;
+}
+.why-choose-properties-card {
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 7px; /* Add border radius for rounded corners */
+  overflow: hidden; /* Hide overflow content */
+  flex: 1 1 calc(33.33% - 20px);
+  max-width: calc(33.33% - 20px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+.why-choose-properties-card:nth-child(n) {
+  margin-right: auto; /* Move the fourth card to the left side */
+}
+
+.why-choose-properties-card img {
+  transition: 0.3s ease;
+  width: 150%; /* Initially scale the image up to ensure it covers the area */
+  object-fit: cover; /* This ensures the aspect ratio is maintained */
+}
+.why-choose-properties-card-img {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 250px; /* Adjust height as necessary */
+}
+.why-choose-properties-card i {
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+.why-choose-properties-card {
+  position: relative;
+}
+
+.why-choose-properties-card-type {
+  font-family: "Trebuchet MS";
+  font-size: 12px;
+  color: rgb(230, 229, 229);
+  position: absolute;
+  top: 15px;
+  right: 0;
+  padding: 5px 5px;
+  margin-right: 15px;
+  background-color: #829cfbb9; /* Add a semi-transparent background */
+  border-radius: 5px;
+}
+.why-choose-properties-card-size {
+  font-family: "Trebuchet MS";
+  font-size: 12px;
+  color: rgb(230, 229, 229);
+  background-color: #829cfbb9; /* Add a semi-transparent background */
+  position: absolute;
+  top: 15px;
+  padding: 5px 5px;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+.why-choose-properties-card-bottom {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between;
+}
+.why-choose-properties-card-bottom-left {
+  display: flex;
+  gap: 5px;
+}
+.why-choose-properties-card-bottom-right {
+  display: flex;
+  padding-right: 20px;
+  gap: 5px;
+}
+.why-choosse-section-image-wrapper {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust based on your layout */
+  text-align: center;
+  color: white; /* Set text color */
+}
+
+.section-image-title {
+  font-family: "Trebuchet MS";
+  font-size: 45px; /* Adjust font size as needed */
+  font-weight: 700; /* Apply bold font weight */
+  color: #5479ffe9;
+  padding-top: 20px;
+}
+
+.section-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Make sure it covers the whole image */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  color: white;
+}
+.section-image-wrapper {
+  position: relative;
+  margin: auto; /* Center the wrapper div */
+  margin-top: 50px; /* Space from the previous section */
+}
+.section-image-wrapper img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.section-image-sub {
+  font-family: "Trebuchet MS";
+  font-size: 25px; /* Adjust font size as needed */
+  font-weight: 100; /* Apply bold font weight */
+  color: #fc824a;
+  padding-top: 20px;
+}
+.image-overlay-wrapper {
+  position: relative;
+  width: 1110px; /* Set the width of the image */
+  margin: 0 auto; /* Center the wrapper div */
+  border-radius: 10px;
+}
+
+.image-overlay-wrapper img {
+  display: block; /* Remove any default margin/padding */
+  width: 100%; /* Ensure it covers the container */
+  height: 420px; /* Adjust height as needed */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the last value for darkness */
+  border-radius: 10px;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* Adjust color as needed */
+}
+.image-overlay-container {
+  position: relative;
+  display: inline-block; /* Or 'block' depending on your layout needs */
+  width: 100%;
+}
+
+.image-overlay-container img {
+  width: 100%; /* Adjust as needed */
+  display: block; /* This removes any space below the image */
+}
+.rounded-image {
+  border-radius: 10px; /* Ensure this matches your desired radius */
+}
+.overlay-text1 {
+  position: absolute;
+  font-family: "Trebuchet MS";
+  top: 50px; /* Adjust as needed */
+  left: 60px; /* Adjust as needed */
+  color: white;
+  font-size: 15px; /* Adjust as needed */
+  font-weight: bold; /* Makes the text bold */
+}
+
+/* Styles for the second overlay text, positioned below the first text */
+.overlay-text2 {
+  font-family: "Trebuchet MS";
+  position: absolute;
+  top: 80px; /* Adjust based on the height of the first text */
+  left: 60px; /* Align with the first text */
+  color: white;
+  font-size: 22px; /* Adjust as needed */
+  font-weight: bold;
+}
+
+/* Styles for the third overlay text, positioned below the second text */
+.overlay-text3 {
+  position: absolute;
+  font-family: "Trebuchet MS";
+  top: 115px; /* Adjust based on the height of the first and second texts */
+  left: 60px; /* Align with the first and second texts */
+  right: 10px; /* Ensures padding from the right side */
+  color: white;
+  font-size: 16px; /* Adjust as needed */
+  text-align: justify; /* Justifies the text */
+  width: 400px;
+  line-height: 30px;
+}
+.button-discover-more {
+  position: absolute;
+  top: 330px; /* Adjust based on the total height of the overlay texts */
+  left: 60px;
+  padding: 10px 20px;
+  background-color: #007bff; /* Example button color */
+  color: white;
+  font-family: "Trebuchet MS";
+  text-decoration: none; /* Remove underline from link */
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.button-discover-more:hover {
+  background-color: #5a90ca; /* Darker shade on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: 0.5s;
+}
+.services-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 60px; /* This adds space between the items */
+  padding: 0 20px; /* Adds some padding on the sides */
+}
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates three columns */
+  grid-gap: 30px 30px; /* First value for rows, second for columns */
+  max-width: 1100px; /* Adjusts the maximum width of the grid */
+  margin: auto; /* Centers the grid horizontally */
+}
+
+.image-grid img {
+  margin: 0;
+  width: 100%; /* Makes images stretch to fill their grid area */
+  height: 250px; /* Keeps the images' aspect ratios intact */
+  object-fit: cover; /* Ensures images cover the grid area without distortion */
+  border-radius: 15px;
+}
+.image-grid img:hover {
+  transform: translateY(-5px); /* Moves the image up by 5px when hovered */
+  transition: 0.5s;
+}
+
+.image-grid-flags {
+  padding-top: 70px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+.image-grid-payments {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  width: 100%;
+}
+.flags-divider {
+  height: 1px; /* Height of the line */
+  background-color: #e5e1e1; /* Color of the line */
+  width: 75%; /* Makes the line stretch to the edges of its container */
+  max-width: 1200px; /* Matches the .image-grid-flags width */
+  margin: 20px auto; /* Positions the line 20px below the .image-grid-flags div, centered */
+}
+.flags-divider-long {
+  height: 1px; /* Height of the line */
+  background-color: #e5e1e1; /* Color of the line */
+  width: 100%; /* Makes the line stretch to the edges of its container */
+
+  margin-top: 20px; /* Positions the line 20px below the .image-grid-flags div, centered */
+  margin-bottom: 20px;
+}
+.image-grid-flags img {
+  margin: 0;
+  width: 100%; /* Makes images stretch to fill their grid area */
+  object-fit: cover; /* Ensures images cover the grid area without distortion */
+  border-radius: 15px;
+}
+.image-grid-payments img {
+  margin: 0;
+  width: 100%; /* Makes images stretch to fill their grid area */
+  object-fit: cover; /* Ensures images cover the grid area without distortion */
+}
+.image-grid-flags img:hover {
+  transform: translateY(-5px); /* Moves the image up by 5px when hovered */
+  transition: 0.5s;
+}
+.image-grid-payments img:hover {
+  transform: translateY(-5px); /* Moves the image up by 5px when hovered */
+  transition: 0.5s;
+}
+.image-text {
+  position: absolute;
+  top: 50%; /* Centers vertically */
+  left: 50%; /* Centers horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Adjusts the centering taking its own size into account */
+  color: white; /* Text color */
+  font-size: 20px; /* Adjust as needed */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Allows clicks to pass through when not visible */
+}
+
+.image-container:hover .image-text {
+  opacity: 1; /* Makes the text visible on hover */
+}
+.image-container {
+  position: relative;
+  flex: 1 0 calc(20% - 30px); /* Adjusts the basis for each item, accounting for the gap */
+  height: 250px; /* Fixed height for each image container */
+}
+.image-container img {
+  width: 100%;
+  height: 100%; /* Ensures the image covers the container's height */
+  object-fit: cover; /* Ensures images cover the container without distortion */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.image-container:hover img {
+  filter: brightness(75%); /* Darkens the image */
+}
+.image-container-transfers:hover img {
+  transform: translateY(-5px);
+}
+.image-container-flags {
+  position: relative; /* Needed for positioning the text */
+  width: 150px;
+  height: 100px; /* Set a fixed height for the flags */
+  margin: 0; /* Eliminates margin around images */
+  padding: 0; /* Eliminates padding around images */
+}
+
+.image-container-flags img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images cover the container without distortion */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.image-container-flags:hover img {
+  transform: translateY(-5px);
+}
+.site-footer {
+  font-family: "Trebuchet MS";
+
+  padding: 30px 0; /* Add padding to the top and bottom */
+  display: flex;
+  justify-content: space-between; /* This will push the child elements to the sides */
+  align-items: flex-start; /* Align items to the start of the cross axis */
+  flex-direction: column;
+  position: relative; /* For the absolute positioning of the back-to-top button */
+}
+.site-footer h4 {
+  font-size: 18px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* This will push the child elements to the sides */
+  width: 100%;
+  max-width: 1200px; /* Adjust based on your layout */
+  margin: 0 auto; /* Center the footer content */
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns items to the start of the footer-section */
+  margin-right: 120px;
+}
+.footer-section img {
+  height: 40px;
+  width: auto;
+  margin-bottom: 10px; /* Adjust as needed */
+}
+.footer-section .footer-logo {
+  margin-bottom: 15px; /* Adjust as needed */
+  margin-left: 40px;
+}
+.social-icons {
+  margin-left: 35px;
+}
+.social-icons a {
+  margin-left: 10px; /* Space between icons */
+}
+
+.footer-links {
+  padding-left: 300px;
+  padding-bottom: 20px;
+  width: 250px;
+}
+.footer-links a {
+  position: relative;
+  display: inline-block; /* Allows the use of the absolute position in ::after */
+  overflow: hidden; /* Ensures the pseudo-element does not extend beyond the link's boundaries */
+  padding-right: 25px; /* Provides space for the arrow */
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  padding-left: 10px; /* adjust the distance as needed */
+  transition: 0.5s;
+}
+.footer-section-contact {
+  margin-right: 120px;
+}
+.footer-content h4 {
+  color: rgb(67, 67, 67);
+}
+.footer-content p {
+  color: rgb(118, 118, 118);
+  font-weight: 100;
+}
+.footer-links a::after {
+  content: "\f061"; /* Updated unicode for FontAwesome 6.x right arrow */
+  font-family: "Font Awesome 6 Free"; /* Updated font family for FontAwesome 6.x */
+  font-weight: 900; /* Required for FontAwesome 6.x */
+  position: absolute;
+  right: -25px; /* Adjust as needed */
+  opacity: 0;
+  transition: opacity 0.3s ease, left 0.3s ease;
+}
+.footer-links a:hover::after {
+  opacity: 1;
+  right: 0; /* aligns arrow with the text when hovered */
+}
+.language-and-copy {
+  padding-top: 10px;
+  width: 100%;
+  background-color: #ffffff; /* Match your footer background color */
+  color: #000000; /* Adjust the text color as needed */
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.language-selector {
+  color: #8e8e8e;
+  padding-left: 150px;
+  display: flex;
+  gap: 10px;
+  font-size: 16px; /* Adjust font-size as needed */
+}
+
+/* This ensures that the icon is vertically centered with the text */
+.language-selector i::before {
+  vertical-align: middle;
+}
+
+/* Styling for the copyright text */
+/* You can adjust the font-size, color, and any other properties as needed */
+.copyright {
+  color: #8e8e8e;
+  font-size: 14px;
+  padding-right: 160px;
+}
+.language-and-copy {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px; /* Adjust padding as needed */
+  align-items: center;
+}
+/* *** */
+.property-card {
+  margin-bottom: 1%;
+  max-height: 350px;
+  font-family: "Trebuchet MS", sans-serif;
+  width: 100%;
+  display: flex;
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px #d2d2d251;
+}
+
+.property-details {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 2%;
+  padding-right: 4%;
+  padding-left: 4%;
+  padding-bottom: 2%;
+}
+.property-details-top {
+  display: flex;
+  padding-bottom: 2%;
+  border-bottom: 1px solid rgb(188, 188, 188);
+  margin-bottom: 2%;
+}
+.property-card-wrapper {
+  width: 58%;
+  padding: 1%;
+  background-color: rgba(228, 228, 228, 0.667); /* Confirming this is set */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+.property-image {
+  position: relative;
+  width: 70%;
+  max-width: 600px;
+  overflow: hidden;
+}
+.discount-price {
+  text-decoration: line-through;
+  font-style: italic;
+}
+.property-size {
+  color: white;
+  position: absolute;
+  font-size: 12px;
+  top: 20px;
+  left: 20px;
+  background-color: #007bff7e;
+  padding: 5px;
+  border-radius: 5px;
+}
+.property-type {
+  color: white;
+  font-size: 12px;
+  top: 20px;
+  right: 20px;
+  position: absolute;
+  background-color: #007bff7e;
+  padding: 5px;
+  border-radius: 5px;
+}
+.centered-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  /* Style your 'View Details' box as needed */
+  padding: 10px;
+  background-color: rgba(59, 148, 220, 0.775); /* Example style */
+  color: white;
+  text-align: center;
+}
+.property-image:hover .centered-box {
+  opacity: 1;
+  transition-delay: 0s; /* Apply transition effect immediately */
+}
+.property-image img {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  object-fit: cover;
+  transform: scale(1.1);
+  transform-origin: center;
+}
+.property-image:hover img {
+  transform: scale(1);
+}
+.property-details-right {
+  width: 100%;
+  font-size: 12px;
+  justify-content: center;
+  align-content: end;
+}
+
+.property-details-left {
+  width: 150%;
+  border-right: 1px solid rgb(188, 188, 188);
+  margin-top: 6%;
+  padding-right: 10%;
+}
+.property-details-left h3 {
+  width: 100%;
+  padding: 0;
+  color: #015fc3;
+  margin: 0;
+}
+.property-details-description {
+  width: 110%;
+  padding: 0;
+  margin: 0;
+  padding-top: 40px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.property-details-location {
+  font-weight: 100;
+  color: #4a4a4a;
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+}
+.property-details-left h2 {
+  width: 100%;
+  padding: 0;
+  font-size: 10px;
+  color: #c8c8c8;
+  margin: 0;
+}
+.property-details-right-top {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.line {
+  width: 90%;
+  max-width: 150px;
+  margin-left: auto;
+  border-bottom: 1px solid rgb(188, 188, 188);
+}
+.property-details-right-top p {
+  color: #8e8e8e;
+  margin: 0;
+  padding-bottom: 5px;
+  font-size: 10px;
+}
+.taxes {
+  color: #8e8e8e;
+  font-style: italic;
+}
+.total {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.price {
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+.property-details-right-bottom {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  justify-content: flex-end; /* This ensures that the content is pushed to the end in the flex-direction which is column */
+}
+.property-attributes {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.property-details-right-bottom-btn {
+  align-self: flex-end; /* Aligns the button to the right */
+  margin-top: 5px; /* Pushes it to the bottom of the container */
+  width: auto; /* Adjust width as necessary, auto makes it content-based */
+  background-color: #007bff;
+  border: none;
+  padding: 4% 9%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.details-button {
+  color: white;
+}
+.property-details-right-bottom p {
+  margin: 0;
+  padding-top: 8px;
+}
+.all_acc-header-wrapper {
+  background-color: #99cafe;
+  margin-bottom: 0;
+  width: 57%;
+  height: auto;
+  padding-top: 70px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 30px;
+  position: relative;
+}
+.all_acc-filter-btn {
+  width: 58%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e4e4e4;
+  box-shadow: 0px 0px 0px 1px #dedede;
+}
+.all_acc-header-title {
+  font-family: "Trebuchet MS";
+  padding: 0px 10%;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgb(63, 61, 61);
+  font-weight: 1000;
+  font-size: 36px;
+}
+.all_acc-header-sub {
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 20px;
+  font-family: "Trebuchet MS";
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.all_acc-header-finder {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.all_acc-header-finder-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Full width of the parent */
+  gap: 0px; /* No gap between child elements */
+}
+/* Equal width for each element */
+.all_acc-header-finder-location,
+.all_acc-header-finder-date,
+.all_acc-header-finder-guests {
+  flex: 1; /* flex-grow, flex-shrink, flex-basis */
+}
+
+.all_acc-header-finder-btn {
+  flex: 0 5 auto; /* Allows the button to grow but with a basis that could be slightly smaller */
+  white-space: nowrap; /* Prevents text from wrapping */
+  padding: 0 15px; /* Adjust padding to ensure the button is not too small */
+  width: 100%;
+  border: none;
+}
+#checks-date1 {
+  padding-left: 2%;
+  height: 46px;
+  width: 100%;
+  border: none;
+  border-right: 1px solid rgb(194, 194, 194);
+}
+/* Make sure select, input, and button elements fill their parent container */
+.all_acc-header-finder-location select,
+.all_acc-header-finder-guests button {
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.header-finder-guests-btn {
+  border: none;
+}
+.all_acc-header-finder-location select {
+  height: 48px;
+  padding-left: 2%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  position: relative;
+  color: rgb(117, 113, 113);
+  border: none;
+  border-right: 1px solid rgb(209, 209, 209);
+}
+.all_acc-header-finder-location i {
+  position: absolute;
+  transform: translateY(100%) translateX(-250%);
+}
+
+.all_acc-header-finder-date {
+  position: relative;
+  flex: 1 0; /* Make sure this matches your flex setup */
+  display: flex;
+  align-items: center; /* This will center the icon vertically */
+}
+
+.all_acc-header-finder-date i {
+  position: absolute;
+  right: 10px; /* Adjust based on your design */
+  top: 50%; /* Center vertically */
+  transform: translateY(
+    -50%
+  ); /* Ensure it's centered by moving it up by half its height */
+}
+
+.all_acc-header-finder-guests {
+  border: none;
+}
+
+.all_acc-header-finder-guests button {
+  padding-left: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  background-color: white;
+  color: rgb(117, 113, 113);
+}
+.all_acc-header-finder-btn {
+  height: 50px;
+  color: white;
+  background-color: rgb(71, 110, 196);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.all_acc-header-finder-guest-counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align items to the start and end of the container */
+  margin-bottom: 10px; /* Add margin to separate each input group */
+  border: none;
+}
+.all_acc-header-finder-guest-counter input {
+  border: none;
+}
+.all_acc-header-finder-guest-counter button {
+  padding: 5px 10px;
+  width: 10px;
+  height: 15px;
+  border: none;
+  background-color: white;
+}
+
+.all_acc-header-finder-guest-counter input {
+  width: 40px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #bbc6ef;
+}
+.all_acc-header-finder-guest-counter label {
+  margin-right: 10px; /* Add margin to the right of the label */
+  padding: 5px; /* Add padding to the labels */
+  color: white;
+  font-family: "Trebuchet MS"; /* Change font family */
+}
+.all_acc-header-finder-guests {
+  position: relative; /* This makes it the reference for the absolute positioning of the dropdown */
+}
+
+.all_acc-header-finder-guests-choice {
+  background-color: rgba(40, 89, 194, 0.78);
+  padding: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: none; /* Hidden by default */
+  position: absolute; /* Positioned absolutely to float above other content */
+  width: 100%; /* Match the width of the parent element */
+  top: 100%; /* Positioned right below the parent element */
+  left: 0;
+  z-index: 10; /* Ensure it's above other content */
+}
+.header-search-icon {
+  padding-right: 20px;
+  padding-top: 3px;
+}
+
+.header-search-icon .fa,
+.header-search-icon .fa-search {
+  /* Adjust this selector depending on the FontAwesome version you use */
+  font-size: 15px; /* Adjust the size as needed */
+  color: white; /* Adjust the color as needed */
+  cursor: pointer;
+}
+/* Adjust icon color on hover */
+.header-search-icon .fa:hover {
+  color: #bbc6efd4; /* Or any other color you prefer */
+}
+.all_acc-header-wrapper-title {
+  display: flex;
+  justify-content: space-between;
+}
+.all_acc-header-filter-btn {
+  margin-left: 1.9%;
+  margin-top: 10px;
+  font-weight: bold;
+  background-color: #aed5ff; /* Example button color */
+  color: rgb(90, 90, 90);
+  font-family: "Trebuchet MS";
+  text-decoration: none; /* Remove underline from link */
+  border: none;
+  height: 30px;
+  font-size: 12px;
+}
+
+/* Adjust select, input, and button sizes to fill their containers */
+
+.map-container {
+  position: fixed; /* Fix position to the viewport */
+  top: 60px; /* Adjust this value so it doesn't overlap your header */
+  right: 0; /* Align to the right side of the viewport */
+  bottom: 0; /* Stretch to the bottom of the viewport */
+  width: 42%;
+  height: calc(
+    100% - 70px
+  ); /* Adjust the height so it fits the viewport without overlapping the header */
+  z-index: 5; /* Make sure it's above other content but below your fixed nav bar if it has a higher z-index */
+}
+
+.header-image {
+  position: relative; /* This makes it a reference point for absolutely positioned child elements */
+  margin-top: 50px;
+  width: 100%;
+  height: 460px;
+  margin-bottom: 50px;
+}
+
+.header-image img {
+  margin-bottom: 50px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crop the image to cover the entire container */
+}
+
+.header-image-title {
+  position: absolute;
+  font-family: "Trebuchet MS";
+  top: 52%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Adjust the centering based on element's own size */
+  color: #fff; /* Adjust color as needed */
+  font-size: 42px; /* Adjust font size as needed */
+  font-weight: bolder;
+  z-index: 2; /* Ensure it's above the image */
+}
+
+.header-image-sub {
+  font-family: "Trebuchet MS";
+  font-weight: 100;
+  position: absolute;
+  top: 61%; /* Position just below the title */
+  left: 50%; /* Center horizontally */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Adjust positioning based on element's own size */
+  color: #fff; /* Adjust color as needed */
+  font-size: 26px; /* Adjust font size as needed */
+  z-index: 2; /* Ensure it's above the image */
+}
+.why-choose-properties-card-img img {
+  width: 110%; /* Initially scale the image up to ensure it covers the area */
+  height: 110%;
+  object-fit: cover; /* This ensures the aspect ratio is maintained */
+}
+.why-choose-sub {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.why-choose-down {
+  padding-bottom: 15px;
+}
+.transfers-image-container {
+  display: flex; /* Use Flexbox for layout */
+  justify-content: space-between; /* This distributes space between items */
+  gap: 20px; /* This adds a gap between the flex items */
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.transfers-image {
+  flex: 1; /* Each item will take up equal space */
+  height: 200px;
+  width: 200px;
+}
+
+.transfers-image img {
+  width: 100%; /* Make images responsive */
+  height: 100%; /* Maintain aspect ratio */
+  display: block; /* Remove any default inline spacing */
+}
+.why-choose-text span {
+  color: #2689f2cd;
+}
+.parent-of-contact-form {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  height: 100vh; /* Example height */
+  width: 100%;
+}
+.contact-form {
+  font-family: "Trebuchet MS";
+  display: flex;
+  width: 70%;
+  gap: 5%;
+  justify-content: space-between;
+}
+
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height as necessary */
+  width: 100%;
+}
+.contact-form-left-map {
+  padding-top: 5%;
+}
+.contact-form-left-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  max-width: 400px;
+}
+.contact-form-right-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+.contact-form-left-text {
+  color: grey;
+  text-align: right;
+
+  font-size: 14px;
+  width: 100%;
+}
+.contact-form-left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+.contact-form-right {
+  width: 100%;
+  max-width: 500px;
+}
+.contact-form-right-fName {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact-form-right-lName {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact-form-right-email {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact-form-right-number {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact-form-right-message {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4%;
+}
+.contact-form-right-message textarea {
+  width: 100%;
+}
+.contact-form-right-captcha {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4%;
+}
+.contact-form-right-name {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+  padding-bottom: 4%;
+}
+.contact-form-right-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+  padding-bottom: 4%;
+}
+.contact-form-right-btn button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 1px solid rgb(203, 203, 203);
+  border-radius: 5px;
+  background-color: #007bff7a;
+  color: white;
+}
+.contact-title {
+  font-family: "Trebuchet MS";
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-title p {
+  font-size: 22px;
+  padding-left: 15%;
+  padding-right: 15%;
+  margin: 0 auto; /* This will center the <p> within .contact-title */
+}
+.contact-form-right input,
+textarea {
+  min-height: 35px;
+  border: 1px solid rgb(203, 203, 203);
+  border-radius: 5px;
+}
+.contact-form-right label {
+  padding-bottom: 2%;
+}
+
+.contact-form-left-text-location-text {
+  text-align: right; /* Aligns the text to the right within its container */
+  border-bottom: 1px solid rgb(202, 202, 202); /* Adds the bottom border */
+  padding-bottom: 8px; /* Optional: Adds some padding below the text for space above the border */
+}
+.contact-form-left-text-location {
+  display: flex;
+  justify-content: flex-end; /* Aligns the content to the right */
+  width: 100%; /* Ensures the div takes the full width of its parent */
+}
+.contact-form-left-text-email-text {
+  text-align: right; /* Aligns the text to the right within its container */
+  border-bottom: 1px solid rgb(202, 202, 202); /* Adds the bottom border */
+  padding-bottom: 8px; /* Optional: Adds some padding below the text for space above the border */
+}
+.contact-form-left-text-email {
+  display: flex;
+  justify-content: flex-end; /* Aligns the content to the right */
+  width: 100%; /* Ensures the div takes the full width of its parent */
+}
+
+.contact-form-left-text-phone {
+  display: flex;
+  justify-content: flex-end; /* Aligns the content to the right */
+  width: 100%; /* Ensures the div takes the full width of its parent */
+}
+.contact-form-left-text-phone-text {
+  text-align: right; /* Aligns the text to the right within its container */
+  border-bottom: 1px solid rgb(202, 202, 202); /* Adds the bottom border */
+  padding-bottom: 8px; /* Optional: Adds some padding below the text for space above the border */
+}
+
+@media (max-width: 2600px) {
+  .horizontal-line2 {
+    left: 44%;
+    width: 54%;
+  }
+  .property-description {
+    line-height: 18px;
+    width: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .hamburger {
+    display: flex; /* Show the hamburger */
+    margin-right: 20px;
+  }
+
+  /* Hide the regular nav items */
+  nav ul {
+    display: none;
+  }
+
+  /* Adjust nav container */
+  nav {
+    justify-content: space-between; /* Logo on the left, hamburger on the right */
+  }
+  .header-title {
+    font-size: 20px;
+  }
+  .header-sub {
+    font-size: 18px;
+  }
+  .header-finder-location select {
+    width: 200px;
+  }
+  #checks-date {
+    width: 150px;
+  }
+  .header-finder-location i {
+    transform: translateY(100%) translateX(-250%);
+  }
+  .header-finder-guests {
+    width: 150px;
+  }
+  .why-choose-text {
+    width: 100%;
+  }
+  .why-choose-text-card-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10%;
+  }
+
+  .why-choose-properties-card-wrapper {
+    width: 80%;
+    padding: 0 10%;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .why-choose-properties-card:nth-child(n) {
+    margin-right: 0; /* Move the fourth card to the left side */
+  }
+  .why-choose-properties-card {
+    min-width: 400px;
+  }
+  .image-overlay-wrapper {
+    width: 100%;
+  }
+  .overlay-text3 {
+    font-size: 12px;
+    width: 60%;
+  }
+  .image-container {
+    flex: 33 30 33.3333%;
+  }
+  .image-grid {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 5px;
+  }
+  .image-container-flags {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .image-grid-payments {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .footer-section {
+    margin: 0;
+  }
+  .footer-links {
+    padding-left: 20px;
+  }
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .contact-form-container {
+    align-content: center;
+    justify-content: center;
+  }
+  .contact-form-right {
+    width: 90%;
+  }
+
+  /* Adjustments for property cards to ensure they fill the screen width */
+  .property-card-wrapper {
+    width: 100%; /* Ensure the wrapper takes full width */
+  }
+  .all_acc-header-wrapper {
+    width: 100%; /* Adjusted from 57% */
+  }
+  /* Ensure the header finder takes full width */
+  .all_acc-header-finder {
+    width: 100%;
+  }
+
+  /* Initial setup for the map - make it invisible and not positioned fixed initially */
+  .map-container {
+    display: none; /* Hide initially, we will display it based on media query */
+  }
+  .all_acc-header-finder-btn {
+    margin-right: 20px;
+  }
+  .all_acc-filter-btn {
+    width: 100%;
+  }
+  .property-card {
+    font-size: 10px; /* Adjust base font size for the card */
+  }
+
+  .property-details-description,
+  .property-details-location,
+  .property-details-right p {
+    font-size: 12px; /* Smaller font size for details */
+    line-height: 12px;
+    width: 90%;
+  }
+
+  .line,
+  .property-attributes {
+    margin-bottom: 1%; /* Reduced margin */
+  }
+
+  .property-details-left,
+  .property-details-right {
+    padding: 1% 2%; /* Adjusted padding for tighter layout */
+  }
+
+  .property-details-right-bottom-btn {
+    padding: 2% 4%; /* Adjust button padding for a snug fit */
+  }
+
+  .property-attributes-guests,
+  .property-attributes-beds,
+  .property-attributes-bedrooms,
+  .property-attributes-bathrooms,
+  .property-attributes-review {
+    font-size: 10px; /* Smaller font size for attributes */
+  }
+  .property-details-right-top p {
+    font-size: 10px;
+  }
+  .property-details-right-bottom p {
+    font-size: 10px;
+  }
+  .price {
+    font-size: 13px;
+  }
+  .header-image-title {
+    font-size: 26px;
+  }
+  .header-image-sub {
+    font-size: 20px;
+  }
+  .property-size {
+    left: 10px;
+    top: 5px;
+  }
+  .property-type {
+    right: 10px;
+    top: 5px;
+  }
+}
+
+@media (max-width: 700px) {
+  .image-grid-payments {
+    margin: 0;
+    width: 80%;
+    padding: 0 10%;
+    gap: 10px;
+  }
+  .image-grid-payments div {
+    width: 100px;
+    height: 100px;
+  }
+  .image-grid-flags {
+    padding: 0 10%;
+    width: 80%;
+  }
+  .image-grid-flags div {
+    height: 100px;
+    width: 100px;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-links {
+    padding-left: 50px;
+    font-size: 10px;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-section-contact {
+    margin: 0;
+    margin-left: 50px;
+  }
+  .footer-section {
+    font-size: 10px;
+  }
+  .footer-section-contact {
+    font-size: 10px;
+  }
+  .hamburger {
+    display: flex; /* Show the hamburger */
+    margin-right: 20px;
+  }
+
+  /* Hide the regular nav items */
+  nav ul {
+    display: none;
+  }
+
+  /* Adjust nav container */
+  nav {
+    justify-content: space-between; /* Logo on the left, hamburger on the right */
+  }
+  .header-title {
+    font-size: 16px;
+  }
+  .header-sub {
+    font-size: 14px;
+  }
+  .header-finder-location select {
+    width: 130px;
+  }
+  #checks-date {
+    width: 130px;
+  }
+  .header-finder-location i {
+    transform: translateY(100%) translateX(-230%);
+  }
+  .header-finder-guests {
+    width: 130px;
+  }
+  .header-finder {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-wrapper {
+    padding: 0;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+  .header-finder-guests button {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .header-finder-btn {
+    width: 150px;
+    height: 50px;
+    color: white;
+
+    margin-top: 20px;
+    background-color: rgb(40, 88, 194);
+    border-radius: 5px;
+  }
+  .language-and-copy {
+    width: 100%;
+    justify-content: none;
+    gap: 20px;
+  }
+  .language-selector {
+    padding: 0;
+  }
+}

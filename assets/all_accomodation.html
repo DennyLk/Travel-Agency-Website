@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>All Accomodation</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/openlayers/dist/ol.css"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </head>
+  <body>
+    <nav>
+      <!-- Hamburger Menu Icon -->
+      <a href="/assets/index.html"
+        ><img loading="lazy" src="/assets/icons/icon_home.png" alt="icon"
+      /></a>
+
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul>
+        <li><a href="/assets/all_accomodation.html">ALL ACCOMMODATION</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)"
+            >PROPERTIES
+            <i style="font-size: 12px" class="fa-solid fa-arrow-down-long"></i
+          ></a>
+          <div class="dropdown-content">
+            <a href="/assets/villas.html">VILLAS</a>
+            <a href="/assets/holiday_homes.html">HOLIDAY HOMES</a>
+            <a href="/assets/hotels.html">HOTELS</a>
+            <a href="/assets/studio_apartments.html">STUDIO APARTMENTS</a>
+            <a href="/assets/apartments.html">APARTMENTS</a>
+            <a href="/assets/rooms.html">ROOMS</a>
+          </div>
+        </li>
+        <li><a href="/assets/with_pool.html">WITH POOL</a></li>
+        <li><a href="/assets/pet_friendly.html">PET FRIENDLY</a></li>
+        <li class="dropdown-services">
+          <a href="javascript:void(0)"
+            >SERVICES
+            <i style="font-size: 12px" class="fa-solid fa-arrow-down-long"></i
+          ></a>
+          <div class="dropdown-content-services">
+            <a href="/assets/transfers_excursions.html"
+              >TRANSFERS & EXCURSIONS</a
+            >
+            <a href="/assets/how_to_arrive.html">HOW TO ARRIVE?</a>
+            <a href="https://orebic-boat-rent.com/">BOAT RENT</a>
+          </div>
+        </li>
+        <li><a href="/assets/contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+      <ul>
+        <li><a href="/assets/all_accomodation.html">ALL ACCOMMODATION</a></li>
+        <li>
+          <a href="javascript:void(0)">PROPERTIES</a
+          ><i class="fa-solid fa-arrow-right" style="padding-right: 10px"></i>
+        </li>
+        <li><a href="/assets/with_pool.html">WITH POOL</a></li>
+        <li><a href="/assets/pet_friendly.html">PET FRIENDLY</a></li>
+        <li class="dropdown-services">
+          <a href="javascript:void(1)">SERVICES</a
+          ><i class="fa-solid fa-arrow-right" style="padding-right: 10px"></i>
+          <div class="dropdown-content-services">
+            <a href="/assets/transfers_excursions.html"
+              >TRANSFERS & EXCURSIONS</a
+            >
+            <a href="/assets/how_to_arrive.html">HOW TO ARRIVE?</a>
+            <a href="https://orebic-boat-rent.com/">BOAT RENT</a>
+          </div>
+        </li>
+        <li><a href="/assets/contact.html">CONTACT</a></li>
+      </ul>
+    </div>
+
+    <!-- New Sidebar for Properties -->
+    <div id="propertySidenav" class="sidenav">
+      <a href=""
+        ><i class="fa-solid fa-arrow-left"></i>
+        <h1 class="propertiesTitle">Properties</h1></a
+      >
+      <ul>
+        <li><a href="/assets/villas.html">VILLAS</a></li>
+        <li><a href="/assets/holiday_homes.html">HOLIDAY HOMES</a></li>
+        <li><a href="/assets/hotels.html">HOTELS</a></li>
+        <li><a href="/assets/studio_apartments.html">STUDIO APARTMENTS</a></li>
+        <li><a href="/assets/apartments.html">APARTMENTS</a></li>
+        <li><a href="/assets/rooms.html">ROOMS</a></li>
+      </ul>
+    </div>
+    <div id="servicesSidenav" class="sidenav">
+      <a href=""
+        ><i class="fa-solid fa-arrow-left"></i>
+        <h1 class="propertiesTitle">Services</h1></a
+      >
+      <ul>
+        <li>
+          <a href="/assets/transfers_excursions.html">TRANSFERS & EXCURSIONS</a>
+        </li>
+        <li><a href="/assets/how_to_arrive.html">HOW TO ARRIVE?</a></li>
+        <li><a href="https://orebic-boat-rent.com/">BOAT RENT</a></li>
+      </ul>
+    </div>
+
+    <header>
+      <div class="all_acc-header-wrapper">
+        <div class="all_acc-header-wrapper-title">
+          <div class="all_acc-header-sub">97 results</div>
+          <div class="header-search-icon">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <!-- Finder -->
+        <div class="all_acc-header-finder">
+          <!-- Location,Checks dates & # Guests -->
+          <div class="all_acc-header-finder-wrapper">
+            <!-- Location -->
+            <div class="all_acc-header-finder-location">
+              <select name="" id="">
+                <option value="" disabled selected>Where To?</option>
+                <option value="">Zagreb</option>
+                <option value="">Split</option>
+              </select>
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <!-- Checks dates -->
+            <div class="all_acc-header-finder-date">
+              <input placeholder="Check in" type="text" id="checks-date1" />
+              <i class="fa-regular fa-calendar"></i>
+            </div>
+
+            <!-- # Guests -->
+            <div class="all_acc-header-finder-guests">
+              <button class="header-finder-guests-btn">
+                <div>1 guest</div>
+                <i class="fa-regular fa-user"></i>
+              </button>
+
+              <!-- DropDown-Menu-Guests -->
+              <div
+                class="all_acc-header-finder-guests-choice"
+                style="display: none"
+                id="guests-choice"
+              >
+                <div class="all_acc-header-finder-guest-counter">
+                  <label for="adults">Adults & Children :</label>
+                  <input type="number" id="adults" value="1" min="0" />
+                </div>
+
+                <div class="all_acc-header-finder-guest-counter">
+                  <label for="children">Babies :</label>
+                  <input type="number" id="children" value="0" min="0" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Button-Search -->
+          <button class="all_acc-header-finder-btn">Search</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="all_acc-filter-btn">
+        <button class="all_acc-header-filter-btn">
+          <i class="fa-solid fa-arrow-up-wide-short"></i> Additional filters
+        </button>
+      </div>
+
+      <div class="property-card-wrapper">
+        <div class="property-card">
+          <!-- Image -->
+          <div class="property-image">
+            <a href="">
+              <img
+                loading="lazy"
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Property"
+              />
+              <div class="centered-box">View Details</div>
+            </a>
+            <div class="property-size">95m²</div>
+            <div class="property-type">HOLIDAY HOME</div>
+          </div>
+
+          <div class="property-details">
+            <div class="property-details-top">
+              <!-- Left Side Of Card -->
+              <div class="property-details-left">
+                <h3>Holiday Home Lovište</h3>
+                <h2>TWO BEDROOM APARTMENT</h2>
+                <p class="property-details-location">
+                  Lovište, Dalmatia
+                  <i class="fa-solid fa-location-dot" style="color: blue"></i>
+                </p>
+                <p class="property-details-description">
+                  The apartment is located in a family house in an exceptional
+                  location, very close to the sea, the first beach is only a few
+                  minutes walk away.
+                </p>
+              </div>
+
+              <!-- Right Side Of Card -->
+              <div class="property-details-right">
+                <!-- Top Side of Right Side -->
+                <div class="property-details-right-top">
+                  <p>Mar 22, 2024 - Mar 28, 2024</p>
+                  <p>6 nights, 1 adult</p>
+                  <div class="price">
+                    <i class="fa-solid fa-tag"></i>
+                    <span class="discount-price">€687</span>
+                    <span class="final-price">€618</span>
+                  </div>
+                  <div class="line"></div>
+                </div>
+
+                <!-- Bottom Side of Right Side -->
+                <div class="property-details-right-bottom">
+                  <p class="taxes">Taxes and fees included</p>
+                  <p class="total">
+                    <i class="fa-solid fa-circle-info"></i>Total € 618
+                  </p>
+                  <button class="property-details-right-bottom-btn">
+                    <a href="#" class="details-button">View details</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="property-details-bottom">
+              <div class="property-attributes">
+                <div class="property-attributes-guests">
+                  <i class="fa-solid fa-person"></i> 17 GUESTS
+                </div>
+                <div class="property-attributes-beds">
+                  <i class="fa-solid fa-bed"></i> 7 BEDS
+                </div>
+                <div class="property-attributes-bedrooms">
+                  <i class="fa-solid fa-bed"></i> 11 BEDROOMS
+                </div>
+                <div class="property-attributes-bathrooms">
+                  <i class="fa-solid fa-toilet"></i> 2 BATHROOMS
+                </div>
+                <div class="property-attributes-review">
+                  <i class="fa-solid fa-star"></i> 0.0 REVIEW
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <!-- Image -->
+          <div class="property-image">
+            <a href="">
+              <img
+              loading="lazy"
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Property"
+              />
+              <div class="centered-box">View Details</div>
+            </a>
+            <div class="property-size">95m²</div>
+            <div class="property-type">HOLIDAY HOME</div>
+          </div>
+
+          <div class="property-details">
+            <div class="property-details-top">
+              <!-- Left Side Of Card -->
+              <div class="property-details-left">
+                <h3>Holiday Home Lovište</h3>
+                <h2>TWO BEDROOM APARTMENT</h2>
+                <p class="property-details-location">
+                  Lovište, Dalmatia
+                  <i class="fa-solid fa-location-dot" style="color: blue"></i>
+                </p>
+                <p class="property-details-description">
+                  The apartment is located in a family house in an exceptional
+                  location, very close to the sea, the first beach is only a few
+                  minutes walk away.
+                </p>
+              </div>
+
+              <!-- Right Side Of Card -->
+              <div class="property-details-right">
+                <!-- Top Side of Right Side -->
+                <div class="property-details-right-top">
+                  <p>Mar 22, 2024 - Mar 28, 2024</p>
+                  <p>6 nights, 1 adult</p>
+                  <div class="price">
+                    <i class="fa-solid fa-tag"></i>
+                    <span class="discount-price">€687</span>
+                    <span class="final-price">€618</span>
+                  </div>
+                  <div class="line"></div>
+                </div>
+
+                <!-- Bottom Side of Right Side -->
+                <div class="property-details-right-bottom">
+                  <p class="taxes">Taxes and fees included</p>
+                  <p class="total">
+                    <i class="fa-solid fa-circle-info"></i>Total € 618
+                  </p>
+                  <button class="property-details-right-bottom-btn">
+                    <a href="#" class="details-button">View details</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="property-details-bottom">
+              <div class="property-attributes">
+                <div class="property-attributes-guests">
+                  <i class="fa-solid fa-person"></i> 17 GUESTS
+                </div>
+                <div class="property-attributes-beds">
+                  <i class="fa-solid fa-bed"></i> 7 BEDS
+                </div>
+                <div class="property-attributes-bedrooms">
+                  <i class="fa-solid fa-bed"></i> 11 BEDROOMS
+                </div>
+                <div class="property-attributes-bathrooms">
+                  <i class="fa-solid fa-toilet"></i> 2 BATHROOMS
+                </div>
+                <div class="property-attributes-review">
+                  <i class="fa-solid fa-star"></i> 0.0 REVIEW
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <!-- Image -->
+          <div class="property-image">
+            <a href="">
+              <img
+              loading="lazy"
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Property"
+              />
+              <div class="centered-box">View Details</div>
+            </a>
+            <div class="property-size">95m²</div>
+            <div class="property-type">HOLIDAY HOME</div>
+          </div>
+
+          <div class="property-details">
+            <div class="property-details-top">
+              <!-- Left Side Of Card -->
+              <div class="property-details-left">
+                <h3>Holiday Home Lovište</h3>
+                <h2>TWO BEDROOM APARTMENT</h2>
+                <p class="property-details-location">
+                  Lovište, Dalmatia
+                  <i class="fa-solid fa-location-dot" style="color: blue"></i>
+                </p>
+                <p class="property-details-description">
+                  The apartment is located in a family house in an exceptional
+                  location, very close to the sea, the first beach is only a few
+                  minutes walk away.
+                </p>
+              </div>
+
+              <!-- Right Side Of Card -->
+              <div class="property-details-right">
+                <!-- Top Side of Right Side -->
+                <div class="property-details-right-top">
+                  <p>Mar 22, 2024 - Mar 28, 2024</p>
+                  <p>6 nights, 1 adult</p>
+                  <div class="price">
+                    <i class="fa-solid fa-tag"></i>
+                    <span class="discount-price">€687</span>
+                    <span class="final-price">€618</span>
+                  </div>
+                  <div class="line"></div>
+                </div>
+
+                <!-- Bottom Side of Right Side -->
+                <div class="property-details-right-bottom">
+                  <p class="taxes">Taxes and fees included</p>
+                  <p class="total">
+                    <i class="fa-solid fa-circle-info"></i>Total € 618
+                  </p>
+                  <button class="property-details-right-bottom-btn">
+                    <a href="#" class="details-button">View details</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="property-details-bottom">
+              <div class="property-attributes">
+                <div class="property-attributes-guests">
+                  <i class="fa-solid fa-person"></i> 17 GUESTS
+                </div>
+                <div class="property-attributes-beds">
+                  <i class="fa-solid fa-bed"></i> 7 BEDS
+                </div>
+                <div class="property-attributes-bedrooms">
+                  <i class="fa-solid fa-bed"></i> 11 BEDROOMS
+                </div>
+                <div class="property-attributes-bathrooms">
+                  <i class="fa-solid fa-toilet"></i> 2 BATHROOMS
+                </div>
+                <div class="property-attributes-review">
+                  <i class="fa-solid fa-star"></i> 0.0 REVIEW
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <!-- Image -->
+          <div class="property-image">
+            <a href="">
+              <img
+              loading="lazy"
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Property"
+              />
+              <div class="centered-box">View Details</div>
+            </a>
+            <div class="property-size">95m²</div>
+            <div class="property-type">HOLIDAY HOME</div>
+          </div>
+
+          <div class="property-details">
+            <div class="property-details-top">
+              <!-- Left Side Of Card -->
+              <div class="property-details-left">
+                <h3>Holiday Home Lovište</h3>
+                <h2>TWO BEDROOM APARTMENT</h2>
+                <p class="property-details-location">
+                  Lovište, Dalmatia
+                  <i class="fa-solid fa-location-dot" style="color: blue"></i>
+                </p>
+                <p class="property-details-description">
+                  The apartment is located in a family house in an exceptional
+                  location, very close to the sea, the first beach is only a few
+                  minutes walk away.
+                </p>
+              </div>
+
+              <!-- Right Side Of Card -->
+              <div class="property-details-right">
+                <!-- Top Side of Right Side -->
+                <div class="property-details-right-top">
+                  <p>Mar 22, 2024 - Mar 28, 2024</p>
+                  <p>6 nights, 1 adult</p>
+                  <div class="price">
+                    <i class="fa-solid fa-tag"></i>
+                    <span class="discount-price">€687</span>
+                    <span class="final-price">€618</span>
+                  </div>
+                  <div class="line"></div>
+                </div>
+
+                <!-- Bottom Side of Right Side -->
+                <div class="property-details-right-bottom">
+                  <p class="taxes">Taxes and fees included</p>
+                  <p class="total">
+                    <i class="fa-solid fa-circle-info"></i>Total € 618
+                  </p>
+                  <button class="property-details-right-bottom-btn">
+                    <a href="#" class="details-button">View details</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="property-details-bottom">
+              <div class="property-attributes">
+                <div class="property-attributes-guests">
+                  <i class="fa-solid fa-person"></i> 17 GUESTS
+                </div>
+                <div class="property-attributes-beds">
+                  <i class="fa-solid fa-bed"></i> 7 BEDS
+                </div>
+                <div class="property-attributes-bedrooms">
+                  <i class="fa-solid fa-bed"></i> 11 BEDROOMS
+                </div>
+                <div class="property-attributes-bathrooms">
+                  <i class="fa-solid fa-toilet"></i> 2 BATHROOMS
+                </div>
+                <div class="property-attributes-review">
+                  <i class="fa-solid fa-star"></i> 0.0 REVIEW
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <!-- Image -->
+          <div class="property-image">
+            <a href="">
+              <img
+              loading="lazy"
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Property"
+              />
+              <div class="centered-box">View Details</div>
+            </a>
+            <div class="property-size">95m²</div>
+            <div class="property-type">HOLIDAY HOME</div>
+          </div>
+
+          <div class="property-details">
+            <div class="property-details-top">
+              <!-- Left Side Of Card -->
+              <div class="property-details-left">
+                <h3>Holiday Home Lovište</h3>
+                <h2>TWO BEDROOM APARTMENT</h2>
+                <p class="property-details-location">
+                  Lovište, Dalmatia
+                  <i class="fa-solid fa-location-dot" style="color: blue"></i>
+                </p>
+                <p class="property-details-description">
+                  The apartment is located in a family house in an exceptional
+                  location, very close to the sea, the first beach is only a few
+                  minutes walk away.
+                </p>
+              </div>
+
+              <!-- Right Side Of Card -->
+              <div class="property-details-right">
+                <!-- Top Side of Right Side -->
+                <div class="property-details-right-top">
+                  <p>Mar 22, 2024 - Mar 28, 2024</p>
+                  <p>6 nights, 1 adult</p>
+                  <div class="price">
+                    <i class="fa-solid fa-tag"></i>
+                    <span class="discount-price">€687</span>
+                    <span class="final-price">€618</span>
+                  </div>
+                  <div class="line"></div>
+                </div>
+
+                <!-- Bottom Side of Right Side -->
+                <div class="property-details-right-bottom">
+                  <p class="taxes">Taxes and fees included</p>
+                  <p class="total">
+                    <i class="fa-solid fa-circle-info"></i>Total € 618
+                  </p>
+                  <button class="property-details-right-bottom-btn">
+                    <a href="#" class="details-button">View details</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="property-details-bottom">
+              <div class="property-attributes">
+                <div class="property-attributes-guests">
+                  <i class="fa-solid fa-person"></i> 17 GUESTS
+                </div>
+                <div class="property-attributes-beds">
+                  <i class="fa-solid fa-bed"></i> 7 BEDS
+                </div>
+                <div class="property-attributes-bedrooms">
+                  <i class="fa-solid fa-bed"></i> 11 BEDROOMS
+                </div>
+                <div class="property-attributes-bathrooms">
+                  <i class="fa-solid fa-toilet"></i> 2 BATHROOMS
+                </div>
+                <div class="property-attributes-review">
+                  <i class="fa-solid fa-star"></i> 0.0 REVIEW
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="property-card">
+          <!-- Image -->
+          <div class="property-image">
+            <a href="">
+              <img
+              loading="lazy"
+                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Property"
+              />
+              <div class="centered-box">View Details</div>
+            </a>
+            <div class="property-size">95m²</div>
+            <div class="property-type">HOLIDAY HOME</div>
+          </div>
+
+          <div class="property-details">
+            <div class="property-details-top">
+              <!-- Left Side Of Card -->
+              <div class="property-details-left">
+                <h3>Holiday Home Lovište</h3>
+                <h2>TWO BEDROOM APARTMENT</h2>
+                <p class="property-details-location">
+                  Lovište, Dalmatia
+                  <i class="fa-solid fa-location-dot" style="color: blue"></i>
+                </p>
+                <p class="property-details-description">
+                  The apartment is located in a family house in an exceptional
+                  location, very close to the sea, the first beach is only a few
+                  minutes walk away.
+                </p>
+              </div>
+
+              <!-- Right Side Of Card -->
+              <div class="property-details-right">
+                <!-- Top Side of Right Side -->
+                <div class="property-details-right-top">
+                  <p>Mar 22, 2024 - Mar 28, 2024</p>
+                  <p>6 nights, 1 adult</p>
+                  <div class="price">
+                    <i class="fa-solid fa-tag"></i>
+                    <span class="discount-price">€687</span>
+                    <span class="final-price">€618</span>
+                  </div>
+                  <div class="line"></div>
+                </div>
+
+                <!-- Bottom Side of Right Side -->
+                <div class="property-details-right-bottom">
+                  <p class="taxes">Taxes and fees included</p>
+                  <p class="total">
+                    <i class="fa-solid fa-circle-info"></i>Total € 618
+                  </p>
+                  <button class="property-details-right-bottom-btn">
+                    <a href="#" class="details-button">View details</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="property-details-bottom">
+              <div class="property-attributes">
+                <div class="property-attributes-guests">
+                  <i class="fa-solid fa-person"></i> 17 GUESTS
+                </div>
+                <div class="property-attributes-beds">
+                  <i class="fa-solid fa-bed"></i> 7 BEDS
+                </div>
+                <div class="property-attributes-bedrooms">
+                  <i class="fa-solid fa-bed"></i> 11 BEDROOMS
+                </div>
+                <div class="property-attributes-bathrooms">
+                  <i class="fa-solid fa-toilet"></i> 2 BATHROOMS
+                </div>
+                <div class="property-attributes-review">
+                  <i class="fa-solid fa-star"></i> 0.0 REVIEW
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-side">
+        <div class="map-container" id="map"></div>
+      </div>
+    </main>
+    <script src="/assets/js/guest_counter.js"></script>
+    <script src="/assets/js/top-button.js"></script>
+    <button
+      onclick="topFunction()"
+      class="scroll-top-button"
+      id="scrollTopButton"
+      title="Go to top"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/openlayers/dist/ol.js"></script>
+    <script src="/assets/js/map.js"></script>
+    <script src="/assets/js/hamburger.js"></script>
+
+    <script>
+      flatpickr("#checks-date1", {});
+    </script>
+  </body>
+</html>

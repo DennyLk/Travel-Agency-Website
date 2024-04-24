@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>Denor Travel</title>
+    <link rel="icon" href="/assets/icons/icon_home.png" type="image/x-icon" class="flaticon"/>
+
+    <!-- Flatpckr Refference -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Font-Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <!-- Hamburger Menu Icon -->
+     <a href="/assets/index.html"><img src="/assets/icons/icon_home.png" alt="icon" loading="lazy"/></a> 
+<div class="hamburger">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+      <ul>
+          <li><a href="/assets/all_accomodation.html">ALL ACCOMMODATION</a></li>
+          <li class="dropdown">
+              <a href="javascript:void(0)">PROPERTIES <i style="font-size: 12px;" class="fa-solid fa-arrow-down-long"></i></a>
+              <div class="dropdown-content">
+                  <a href="/assets/villas.html">VILLAS</a>
+                  <a href="/assets/holiday_homes.html">HOLIDAY HOMES</a>
+                  <a href="/assets/hotels.html">HOTELS</a>
+                  <a href="/assets/studio_apartments.html">STUDIO APARTMENTS</a>
+                  <a href="/assets/apartments.html">APARTMENTS</a>
+                  <a href="/assets/rooms.html">ROOMS</a>
+              </div>
+          </li>
+          <li><a href="/assets/with_pool.html">WITH POOL</a></li>
+          <li><a href="/assets/pet_friendly.html">PET FRIENDLY</a></li>
+          <li class="dropdown-services">
+            <a href="javascript:void(0)">SERVICES <i style="font-size: 12px;" class="fa-solid fa-arrow-down-long"></i></a>
+            <div class="dropdown-content-services">
+              <a href="/assets/transfers_excursions.html">TRANSFERS & EXCURSIONS</a>
+              <a href="/assets/how_to_arrive.html">HOW TO ARRIVE?</a>
+              <a href="https://orebic-boat-rent.com/">BOAT RENT</a>
+            </div>
+          </li>
+          <li><a href="/assets/contact.html">CONTACT</a></li>
+
+      </ul>
+  </nav>
+
+
+  <div id="mySidenav" class="sidenav">
+    <ul>
+      <li><a href="/assets/all_accomodation.html">ALL ACCOMMODATION</a></li>
+      <li ><a href="javascript:void(0)">PROPERTIES</a><i class="fa-solid fa-arrow-right" style="padding-right: 10px;"></i></li>
+      <li><a href="/assets/with_pool.html">WITH POOL</a></li>
+      <li><a href="/assets/pet_friendly.html">PET FRIENDLY</a></li>
+      <li class="dropdown-services">
+        <a href="javascript:void(1)">SERVICES</a><i class="fa-solid fa-arrow-right" style="padding-right: 10px;"></i>
+        <div class="dropdown-content-services">
+          <a href="/assets/transfers_excursions.html">TRANSFERS & EXCURSIONS</a>
+          <a href="/assets/how_to_arrive.html">HOW TO ARRIVE?</a>
+          <a href="https://orebic-boat-rent.com/">BOAT RENT</a>
+        </div>
+      </li>
+      <li><a href="/assets/contact.html">CONTACT</a></li>
+
+  </ul>
+</div> 
+
+<!-- New Sidebar for Properties -->
+<div id="propertySidenav" class="sidenav">
+  <a href=""><i class="fa-solid fa-arrow-left"></i><h1 class="propertiesTitle">Properties</h1></a>
+  <ul>
+      <li><a href="/assets/villas.html">VILLAS</a></li>
+      <li><a href="/assets/holiday_homes.html">HOLIDAY HOMES</a></li>
+      <li><a href="/assets/hotels.html">HOTELS</a></li>
+      <li><a href="/assets/studio_apartments.html">STUDIO APARTMENTS</a></li>
+      <li><a href="/assets/apartments.html">APARTMENTS</a></li>
+      <li><a href="/assets/rooms.html">ROOMS</a></li>
+  </ul>
+</div>
+<div id="servicesSidenav" class="sidenav">
+  <a href=""><i class="fa-solid fa-arrow-left"></i><h1 class="propertiesTitle">Services</h1></a>
+  <ul>
+    <li><a href="/assets/transfers_excursions.html">TRANSFERS & EXCURSIONS</a></li>
+    <li><a href="/assets/how_to_arrive.html">HOW TO ARRIVE?</a></li>
+    <li><a href="https://orebic-boat-rent.com/">BOAT RENT</a></li>
+  </ul>
+</div>
+
+    <header>
+      <img
+        src="https://images.unsplash.com/photo-1457195740896-7f345efef228?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="image" 
+        loading="lazy"
+      />
+      <div class="header-wrapper">
+        <!-- Title -->
+        <div class="header-title">
+          UNTOUCHED NATURE OF PELJEŠAC PENINSULA AND AMAZING KORČULA ISLAND
+        </div>
+        <!-- Sub-Title -->
+        <div class="header-sub">
+          Explore our wide selection and book the best accommodation and
+          activities with us
+        </div>
+
+        <!-- Finder -->
+        <div class="header-finder">
+          <!-- Location,Checks dates & # Guests -->
+          <div class="header-finder-wrapper">
+            <!-- Location -->
+            <div class="header-finder-location">
+              <select name="" id="">
+                <option value="" disabled selected>Where To?</option>
+                <option value="">Zagreb</option>
+                <option value="">Split</option>
+              </select>
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <!-- Checks dates -->
+            <div class="header-finder-date">
+              <input placeholder="Check in" type="text" id="checks-date" />
+              <i class="fa-regular fa-calendar"></i>
+            </div>
+
+            <!-- # Guests -->
+            <div class="header-finder-guests">
+              <button class="header-finder-guests-btn">
+                <div>1 guest</div>
+                <i class="fa-regular fa-user"></i>
+              </button>
+
+              <!-- DropDown-Menu-Guests -->
+              <div
+                class="header-finder-guests-choice"
+                style="display: none"
+                id="guests-choice"
+              >
+                <div class="all_acc-header-finder-guest-counter">
+                  <label for="adults">Adults & Children :</label>
+                  <input type="number" id="adults" value="1" min="0" />
+                </div>
+
+                <div class="all_acc-header-finder-guest-counter">
+                  <label for="children">Babies :</label>
+                  <input type="number" id="children" value="0" min="0" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Button-Search -->
+          <button class="header-finder-btn">Search</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- Content section -->
+        <section id="why-choose">
+            <!-- Intro text -->
+            <div class="why-choose-content">
+              <h2>WE ARE DIFFERENT FROM OTHER AGENCIES</h2>
+              <p>Facts why you should book with us</p>
+            </div>
+            <div class="why-choose-text">
+              <p><strong>Denor Travel</strong> is locally owned <strong>agency</strong> from <strong>Orebić</strong>, serving <strong>Pelješac peninsula</strong> and <strong>Korčula island </strong>area. We offer different types of <strong>private accommodation</strong>; from <strong>simple rooms</strong> and <strong>apartments</strong>, to <strong>luxury villas</strong> and <strong>vacation homes</strong>. Besides accommodation, we do offer <strong>boat rentals</strong> with or without <strong>skipper, daily boat trips, jet ski rentals, bikes, scooters, SUPs, water taxi,</strong>very affordable <strong>private airport transfers</strong> and many other services to create <strong>unforgettable vacation experience.</strong></p>
+              
+              <!-- Card Gallery -->
+              <div class="why-choose-text-card-wrapper">
+                <!-- Card-1 -->
+                <div class="why-choose-text-card">
+                  <i class="fa-solid fa-arrows-to-circle"></i>
+                  <div class="why-choose-text-card-title">
+                    Local agency
+                  </div>
+                  <p>We are a small local agency specialized in the Pelješac peninsula and Korčula island.</p>
+                </div>
+                <!-- Card-2 -->
+                <div class="why-choose-text-card">
+                  <i class="fa-solid fa-medal"></i>
+                  <div class="why-choose-text-card-title">
+                    High quality standards
+                  </div>
+                  <p>Each accommodation personally checked including real photos and description.</p>
+                </div>
+                <!-- Card-3 -->
+                <div class="why-choose-text-card">
+                  <i class="fa-solid fa-headset"></i>
+                  <div class="why-choose-text-card-title">
+                    Personalized customer support
+                  </div>
+                  <p>All your calls and emails will be answered promptly within 24 hours.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section-Image -->
+            <img loading="lazy" src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            
+            <!-- Card Gallery -->
+            <div class="why-choose-text-card-wrapper">
+              <!-- Card-1 -->
+              <div class="why-choose-text-card">
+                <i class="fa-solid fa-credit-card"></i>
+                <div class="why-choose-text-card-title">
+                  Lowest price guarantee
+                </div>
+                <p>We are sure that we can offer the lowest prices of accomodation in our area</p>
+              </div>
+              <!-- Card-2 -->
+              <div class="why-choose-text-card">
+                <i class="fa-solid fa-tags"></i>
+                <div class="why-choose-text-card-title">
+                  Many extras and discounts
+                </div>
+                <p>Numerous discounts and offers for various products and services in our area</p>
+              </div>
+              <!-- Card-3 -->
+              <div class="why-choose-text-card">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <div class="why-choose-text-card-title">
+                  What are you waiting for?
+                </div>
+                <p>Explore our site and plan your dream vacation with Denor Travel agency</p>
+              </div>
+            </div>
+            <!-- Section-Image -->
+            <img loading="lazy" src="https://images.unsplash.com/photo-1591285713698-598d587de63e?q=80&w=2714&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            <div style="margin: 0;" class="why-choose-content">
+              <h2>FEATURING PROPERTIES</h2>
+              <p>Find the best accommodation for you</p>
+            </div>
+
+            <!-- Propertiers-Gallery -->
+            <div class="why-choose-properties-card-wrapper">
+              <!-- Card-1 -->
+              <div class="why-choose-properties-card">
+                <div class="why-choose-properties-card-img">
+                  <img loading="lazy" src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+
+                  <a href="#" class="details-box-link">View Details</a>
+                  <div class="why-choose-properties-card-size">95m2</div>
+                  <div class="why-choose-properties-card-type">Holiday Home</div>
+                  <div class="why-choose-properties-card-title">Holiday Home Loviste</div>
+                  <div class="why-choose-properties-card-sub">HOLIDAY HOME</div>
+                  <div class="why-choose-properties-card-location">Loviste, Dalmatia</div>
+                  <div class="why-choose-properties-card-price">From EUR 103 / per night</div>
+                  <div class="why-choose-properties-card-bottom">
+                      <div class="why-choose-properties-card-bottom-left">
+                          <i class="fa-regular fa-user"></i>
+                          <div class="why-choose-properties-card-guests#">x6</div>
+                      </div>
+                      <div class="why-choose-properties-card-bottom-right">
+                          <i class="fa-solid fa-star"></i>
+                          <div class="why-choose-properties-card-rating">4.13</div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Card-2 -->
+              <div class="why-choose-properties-card">
+                <div class="why-choose-properties-card-img">
+                  <img loading="lazy" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                </div>
+                <a href="#" class="details-box-link">View Details</a>
+                <div class="why-choose-properties-card-size">205m2</div>
+                <div class="why-choose-properties-card-type">Villa</div>
+                <div class="why-choose-properties-card-title">Villa Loviste</div>
+                <div class="why-choose-properties-card-sub">VILLA</div>
+                <div class="why-choose-properties-card-location">Loviste, Dalmatia</div>
+                <div class="why-choose-properties-card-price">From EUR 250 / per night</div>
+                <div class="why-choose-properties-card-bottom">
+                    <div class="why-choose-properties-card-bottom-left">
+                        <i class="fa-regular fa-user"></i>
+                        <div class="why-choose-properties-card-guests#">x10</div>
+                    </div>
+                    <div class="why-choose-properties-card-bottom-right">
+                        <i class="fa-solid fa-star"></i>
+                        <div class="why-choose-properties-card-rating">4.80</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card-3 -->
+            <div class="why-choose-properties-card">
+              <div class="why-choose-properties-card-img">
+                <img src="https://images.unsplash.com/photo-1512916194211-3f2b7f5f7de3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+              </div>
+              <a href="#" class="details-box-link">View Details</a>
+              <div class="why-choose-properties-card-size">300m2</div>
+              <div class="why-choose-properties-card-type">Villa</div>
+              <div class="why-choose-properties-card-title">Villa Natura</div>
+              <div class="why-choose-properties-card-sub">VILLA</div>
+              <div class="why-choose-properties-card-location">Orebic, Dalmatia</div>
+              <div class="why-choose-properties-card-price">From EUR 350 / per night</div>
+              <div class="why-choose-properties-card-bottom">
+                  <div class="why-choose-properties-card-bottom-left">
+                      <i class="fa-regular fa-user"></i>
+                      <div class="why-choose-properties-card-guests#">x12</div>
+                  </div>
+                  <div class="why-choose-properties-card-bottom-right">
+                      <i class="fa-solid fa-star"></i>
+                      <div class="why-choose-properties-card-rating">4.90</div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Card-4 -->
+          <div class="why-choose-properties-card">
+            <div class="why-choose-properties-card-img">
+              <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1663126298656-33616be83c32?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+            <div class="why-choose-properties-card-content">
+              <a href="#" class="details-box-link">View Details</a>
+              <div class="why-choose-properties-card-size">95m2</div>
+              <div class="why-choose-properties-card-type">Holiday Home</div>
+              <div class="why-choose-properties-card-title">Holiday Home Loviste</div>
+              <div class="why-choose-properties-card-sub">HOLIDAY HOME</div>
+              <div class="why-choose-properties-card-location">Loviste, Dalmatia</div>
+              <div class="why-choose-properties-card-price">From EUR 103 / per night</div>
+            </div>
+            <div class="why-choose-properties-card-bottom">
+                <div class="why-choose-properties-card-bottom-left">
+                    <i class="fa-regular fa-user"></i>
+                    <div class="why-choose-properties-card-guests#">x6</div>
+                </div>
+                <div class="why-choose-properties-card-bottom-right">
+                    <i class="fa-solid fa-star"></i>
+                    <div class="why-choose-properties-card-rating">4.13</div>
+                </div>
+            </div>
+        </div>
+          
+              <!-- Repeat for other cards as needed, each with its own details -->
+          </div>
+            </div>
+
+            <div class="image-overlay-container">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1553246969-7dcb4259a87b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+              <div class="overlay-text">
+                <div class="section-image-title">PERFECT DAY ON THE WATER</div>
+                <div class="section-image-sub">Don't just lay in the sun...</div>
+              </div>
+            </div>
+          
+            <div style="margin: 0;" class="why-choose-content">
+              <h2>OUR RENT SERVICES</h2>
+              <p>Boat rental, Jet Ski, Bikes, E-bikes and more...</p>
+            </div>
+            <div class="services-image-wrapper">
+              
+              <div class="image-overlay-wrapper">
+                <img loading="lazy" class="rounded-image" style="margin: 0;" src="https://images.unsplash.com/photo-1542397284385-6010376c5337?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Overlay Image">
+                <div class="dark-overlay"></div>
+                <div class="overlay-text1">RENT A BOAT</div>
+                <div class="overlay-text2">Be a captain for a day!</div>
+                <div class="overlay-text3">Be the captain of your own ship and rent a boat, discovering the hidden beaches of Pelješac and Korčula, accessible only from the sea. We offer a large selection of boats and equipment for fun at sea, for everyone’s taste and for everyone’s pocket, starting already from 99 EUR !</div>
+                <button class="button-discover-more">Discover More</button>
+              </div>
+  
+              <div class="image-overlay-wrapper">
+                <img loading="lazy" class="rounded-image" style="margin: 0;" src="https://images.unsplash.com/photo-1505867798796-639ec7e8cdf5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Overlay Image">
+                <div class="dark-overlay"></div>
+                <div class="overlay-text1">JET SKI RENT</div>
+                <div class="overlay-text2">Rent a Jet Ski!</div>
+                <div class="overlay-text3">No matter how old you are, or young, there is simply nothing like a PWC to have a lot of fun on the water.</div>
+                <button class="button-discover-more">Discover More</button>
+              </div>
+  
+              <div class="image-overlay-wrapper">
+                <img loading="lazy" class="rounded-image" style="margin: 0;" src="https://images.unsplash.com/photo-1566480047210-b10eaa1f8095?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Overlay Image">
+                <div class="dark-overlay"></div>
+                <div class="overlay-text1">RENT A BIKE</div>
+                <div class="overlay-text2">Nature challenge awaits you!</div>
+                <div class="overlay-text3">In the Municipality of Orebić there are over 100 km of bike-ways, there are 3 different bike routes to the hill of St. Ilija. It is your choice, regular MTB or E-bike...</div>
+                <button class="button-discover-more">Discover More</button>
+              </div>
+            </div>
+            <div class="section-image-wrapper" style="margin-top: 50px;">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1457008788985-0a290da4a47f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+              <div class="why-choosse-section-image-wrapper">
+                <div class="section-image-title">
+                  DUBROVNIK - NERETVA COUNTY
+                </div>
+                <div class="section-image-sub">
+                  Discover the beauty of the south Mediterranean coast...
+                </div>
+              </div>
+          </div>
+          <div style="margin: 0;" class="why-choose-content">
+            <h2>MOST INTERESTING PLACES TO VISIT</h2>
+            <p>Visit, explore & enjoy...</p>
+          </div>
+          <div class="image-grid">
+            <div class="image-container">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1555990793-da11153b2473?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+              <span class="image-text">Dubrovnik the pearl of the Adriatic</span>
+            </div>
+            <div class="image-container">
+              <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1661909918862-403588a10c0b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 2">
+              <span class="image-text">Dubrovnik the pearl of the Adriatic</span>
+            </div>
+            <div class="image-container">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1565481093319-86a3ddd1cf87?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 3">
+              <span class="image-text">Dubrovnik the pearl of the Adriatic</span>
+            </div>
+            <div class="image-container">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1626699848008-7e419bc4e237?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 4">
+              <span class="image-text">Dubrovnik the pearl of the Adriatic</span>
+            </div>
+            <div class="image-container">
+              <img loading="lazy" src="https://plus.unsplash.com/premium_photo-1661909483226-bcad041fa242?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 5">
+              <span class="image-text">Dubrovnik the pearl of the Adriatic</span>
+            </div>
+            <div class="image-container">
+              <img loading="lazy" src="https://images.unsplash.com/photo-1573656256773-fd4de4bbfbfe?q=80&w=2936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 6">
+              <span class="image-text">Dubrovnik the pearl of the Adriatic</span>
+            </div>
+          </div>
+
+          <div class="image-grid-flags">
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://media.istockphoto.com/id/497034918/photo/flag-of-croatia.jpg?s=612x612&w=0&k=20&c=6-9RMvBTlnJQVwGKrfH1-7X9PuIoN8HAmtqAauooDog=" alt="Flag 1">
+            </div>
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/Flag_of_Bosnia_and_Herzegovina.svg" alt="Flag 2">
+            </div>
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png" alt="Flag 3">
+            </div>
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/1200px-Flag_of_Slovakia.svg.png" alt="Flag 4">
+            </div>
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/1500px-Flag_of_Italy.svg.png" alt="Flag 5">
+            </div>
+          </div>
+          <div class="flags-divider"></div> <!-- New div for the line -->
+
+          <div class="image-grid-payments">
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Visa_Electron.svg/1200px-Visa_Electron.svg.png" alt="Flag 1">
+            </div>
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15.fit_lim.size_1050x591.v1602794215.png" alt="Flag 2">
+            </div>
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://www.investopedia.com/thmb/F8CKM3YkF1fmnRCU2g4knuK0eDY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/MClogo-c823e495c5cf455c89ddfb0e17fc7978.jpg" alt="Flag 3">
+            </div>
+            <div class="image-container-flags">
+              <img loading="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAT4AAACfCAMAAABX0UX9AAAAflBMVEX///8AAACLi4vp6emGhobz8/OqqqrS0tK9vb3Jyclvb2+Xl5eCgoL7+/v4+Pj19fVSUlJKSkri4uK1tbWhoaEsLCy6urpbW1t8fHwPDw/f39/FxcVjY2Pt7e0mJibV1dU2NjYfHx9ERERzc3M+Pj4wMDCbm5sMDAwYGBhWVlaXORbFAAAG1ElEQVR4nO2d55aqMBRGiSJW7G0ce5ny/i94ISeBACG4VvRCZn37l2JgzmxJD9HzAAAAAAAAAAAAAAAAAAAAAADAfcLx4dBuHIdJWLeYaubD6QdrLLPWrm5BJg77ugVVMmuuwM+63TxFULemEnoU3vnm+63m4fu3OwW4rFuUljl9t+O64zCxvsQxdusOQ8c0Cuw+qTuKKjZRlI+6g9Cwi+L6bvStR5yjOD/rDqLIKAprXXcQT9CN4tzXHUSRVRRW3TE8RTMDbeaXqiHOJoe6g8jTjoIa1R3EUyybWPfGNcew7iCeYtHEuuPU2PZonrhv1Ks7iDzdBneHsvShzwboswL6rIA+K6DPCuizAvqsgD4roM8K6LMC+qyAPiugzwroswL6rIA+K/6Evm6rrvmGP6Bv8cPY4o3RmHBfX7xSgvXfGY4B5/Vd+WKi/HKYYJTBHwant6wHdV3fltub5Q8PNGvxBm9YzOi4vhOZKdQcOn2RwJevOnJcHy3gHRSO6/UxNn9xpG7rC7mTVbFYK9PH2q+N1G19XV7wabIk6ZuNtpzBJtG3em2kbuv7ZOyibfKRvi/lkr/CX+s1IQoc1RdSfu30eWHW2e1ydyDpyywzCoS/zisjdVFfb39h7HgTK5u620ts5dFSizWNPu+L9L107ZF7+vpHWY79tLqnYfKOMT9NpNPnPahAfGWkzulrldWpEdekCtbqE9lXPbTrfn52LZrTrunzDfYYu8tkWn30sAiTtsJgKs+bBlL85rharS5+9sRrdGz1o6ujHNPXM9pjW2lBq69DicTwQpA9NcgczZzXpmO6OsctfeG30V5aK2j1jVV9v/mTqetyoDcn9TxSutEF5Ja+pdGespq88u67Fk+/8USb4pkzfkhryS19D5O9i5JQq29H6eKmoqyA7v6wlXTweEtoXbiWsK6N1Cl9c+PNpz6GVFHziiw6EyMI4qY+x6/D1LFgodybeZzStzDqU1Nq9a34waknfU2TT9aKsxt/qTSuaVRHP57tlD5jqyVTtOv0DSldfGFqsSjdFCreeNOkz19ek4/GxS8nxSl9pcNQMdtiyow+We3EvePBJmJb+JDSU7LkUSvSmWsJqh86o8+4u0HmKa7iiItsIuu7vFQs0GhMK70TY2g6oKRn8nf0Zcr20vG+q+ayniz8SB9V0ElZ8BO/K3vo2Sl9N5O+s5qyLJt/aIerxpNA0ccfcqZM7snZlLIn7JzSNzTpyzwYWqJvlbG3C75G+9n9cZEfC31UEIrxMMrKZXMkTukzN1zUcWS9PrX832luZXEF6uOKwoAPiN29EpzStzPqUxsiGn0ffuXtKb8Aqmb4S7GlR1mkTumrGDF4pDNuZGc6FPuuDJeLTNU5WWkvIPXRXc4njykjlz4w7pQ+c9Ub5bGkaCs0XLLIVszMDxa9/u6QrTq8CX/Hszrf7ea3NFK39FUM96WtNW2nLUFs8LRJc7vacPHk1+TJznH5+i239I2r9MnmrVkfNQPVzSbUZrMn/e7k8fJI3dJnbvmxtHlr1kdp1Zm5ZVafJ0/nootrQBIc01dR9z6XeWlM6ls9NMvpizcYYWdRCBr2enBMn7cpKlP4kMme0MeUlTFdltNHfY0DZWJDpK7paz9181VkXtqTMv23J995fd6FX44PF5h2lHFNn3GeN50BN+sT7R9Z+J1kc1LRx/uHV948PGmvQTinT3TotaSVwVMNF9Y6dTqHdVweTPP60rv8aIrUPX3lEx7KKWZ93j135sc8ry+dijMuyXJPX+nAgdq+qNB3yJ266xRMJbPoxiUcDupTZntXszQrZ3pWFfq8trKyiK3awqeqT0xPsrMxUhf1ib7btMebHt2BJo/tK/Pdl9wS+hL/JdKXmdAQ9Yt5PZuT+rxwvVyk9UTnM1jnRpEP83Z7PjevhOwut4PRkurVMErfzqYXY7Pm3fnc1Pc/oGKhYjUg9JUgKviKh+Wgr4QR6atIBX3lIVRUPjHQp6Pz7DJ86MszYceLbBFWrsKHvjzKiPa0MjH05Un1lSzoUIG+PIm+Zx7fgr48sb6f8yB4ajNw6LMC+qyAPiugzwroswL6rIA+K6DPCuizAvqsgD4roM8K6LMC+qxopD78UpYV+J02K/ArgXYw/EalDY/q+f1mcGxkoH716pJG0NDf5+WPbzT+t7UplzSu5vDo8Y3zSzcqfANhvKD8XHcUOmhh+7LJAscLvj7V9NhCfdD2H+y4H438BjLaiyeCm9o56jMXaG791jFuetMIfl+9i/ZLaS83x+r/oSYuv8M37IH/asJwPJl0msVkMg7f8vsLAAAAAAAAAAAAAAAAAAAAAADwv/kHC5lSkAh/goQAAAAASUVORK5CYII=" alt="Flag 4">
+            </div>
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2023/04/google-pay-1680875397.jpg" alt="Flag 5">
+            </div>
+            <div class="image-container-flags">
+              <img loading="lazy" src="https://www.ecommerce-nation.com/wp-content/uploads/2018/01/Amazon-Pay-1.png.webp" alt="Flag 5">
+            </div>
+          </div>
+          <div class="flags-divider-long"></div> <!-- New div for the line -->
+         
+          </section>
+      </main>
+      <footer class="site-footer">
+        <div class="footer-content">
+
+          <div class="footer-section">
+            <img loading="lazy" src="/assets/icons/icon_home.png" alt="Denor Travel Logo" class="footer-logo" />
+            <div class="social-icons">
+              <!-- Replace # with your actual social media links -->
+              <a href="#">FOLLOW US</a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h4>Useful links</h4>
+            <p><a href="">Boat rent & Water Activities</a></p>
+            <p><a href="">Contact</a></p>
+            <p><a href="">Terms & conditions</a></p>
+            <p><a href="">Privacy Policy</a></p>
+          </div>
+
+          <div class="footer-section-contact">
+            <h4>Contact us</h4>
+            <p><i class="fas fa-phone"></i> <a href="">+38520204380</a></p>
+            <p><i class="fas fa-phone"></i> <a href="">+385995051650</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="">info@denor-travel.hr</a></p>
+          </div>
+
+        </div>
+        <div class="flags-divider"></div> <!-- New div for the line -->
+
+        <div class="language-and-copy">
+          <div class="language-selector">
+            <span>English</span>
+            <i class="fas fa-globe"></i>
+          </div>
+        <div class="copyright">
+          <span>© 2024</span>
+        </div>
+      </div>
+        
+      </footer>
+
+
+    <script>
+      flatpickr("#checks-date", {});
+    </script>
+    <script src="/assets/js/guest_counter.js"></script>
+    <script src="/assets/js/top-button.js"></script>
+    <script src="/assets/js/hamburger.js"></script>
+      
+    <button onclick="topFunction()" class="scroll-top-button" id="scrollTopButton" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    
+  </body>
+</html>
